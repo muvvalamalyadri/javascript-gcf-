@@ -1,0 +1,23 @@
+console.log("Example:1");
+let score=10;
+score += 5;
+console.log(score); // Ans:- 15
+console.log("Example:2");
+let a=10;
+let b=3;
+
+console.log(a+b); // Ans:- 13
+console.log(a-b); // Ans:- 7
+console.log(a*b); // Ans:- 30
+console.log(a/b); // Ans:- 3.3333333333333335 
+console.log(a%b); // Ans:- 1
+console.log("Example:3");
+let x=10;
+let y="5";
+console.log(x+y); // Ans:-  105
+
+console.log("Example:4");
+// converting string to number
+let c=10;
+let d="5";
+console.log(c+Number(d)); // Ans:- 15
