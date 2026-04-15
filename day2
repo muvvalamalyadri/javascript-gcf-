@@ -22,6 +22,7 @@ document.getElementById("text").innerText = "Hello from Internal JS";
 
     js:-----------
     document.getElementById("text").innerText = "Hello from External JS";
+------------------------------------------------------------------------------------------------------------------------------------
 Try and Catch:---------------------------------------------------------------
 code 1:-----------
   try {
@@ -70,6 +71,75 @@ code2:--------
       out.innerText = "Error: "+ error.message;
       } finally {
       console.log("Validation attempted");
+----------------------------------------------------------------------------------------------------------------
+Alert:----------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The alert() Method</h2>
+
+<p>Click the button to display an alert box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  alert("Hello! I am an alert box!");
+}
+</script>
+
+</body>
+</html>
+Confirm:----------------------------------------------------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The confirm() Method</h2>
+
+<p>Click the button to display a confirm box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  confirm("Press a button!");
+}
+</script>
+
+</body>
+</html>
+
+Prompt:-----------------------------------------------------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The prompt() Method</h2>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let person = prompt("Please enter your name", "Harry Potter");
+  if (person != null) {
+    document.getElementById("demo").innerHTML =
+    "Hello " + person + "! How are you today?";
+  }
+}
+</script>
+
+</body>
+</html>
       }
       }
       </script>
