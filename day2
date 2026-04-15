@@ -1,0 +1,79 @@
+Internal:---------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head><title>Internal JS</title></head>
+<body style="font-family: sans-serif;padding: 16px">
+<h2 id="text"></h2>
+<script>
+document.getElementById("text").innerText = "Hello from Internal JS";
+</script>
+</body>
+  </html>
+  External:-------------------------------------------------------------------
+  html:--------
+    <!DOCTYPE html>
+<html>
+<head><title>External JS</title></head>
+<body style="font-family:sans-serif;padding:16px">
+<h2 id="text"></h2>
+<script src="script.js"></script>
+</body>
+</html>
+
+    js:-----------
+    document.getElementById("text").innerText = "Hello from External JS";
+Try and Catch:---------------------------------------------------------------
+code 1:-----------
+  try {
+    console.log(userName);
+} catch (error) {
+  console.error("An Error occurred",error);
+   } finally {
+   console.log("This will always be executed");
+   }
+code2:--------
+   try {
+    function checkAge(age){
+      if (age<18){
+          throw new Error("Age cannot be negative");
+       }
+ console.log("Age id valid");
+  }
+   }catch(error){
+   console.error("An error occurred: "+error.message);
+   }
+   checkAge(16 );
+
+  Exception Handling:----------------------------------------------------------
+    <!DOCTYPE html>
+<html>
+    <head>
+      <title>Exception Handling</title>
+    </head>
+    <body style="font-family: sans-serif;padding: 20px; background:#f8f9fa">
+      <h2>Enter a number</h2>
+      <input type="text" id="num" placeholder="e.g. 42">
+      <button onclick="checkNumber()">Check</button>
+      <p id="result" style="margin-top:10px;font-weight:600"></p>
+      <script>
+      function checkNumber() {
+      let value = document.getElementById("num").value;
+       let out = document.getElementById("result");
+      try {
+      if (value =="") throw new Error("Input cannot be empty");
+      let number = Number(value);
+      if (isNaN(number)) throw new Error("Not a valid number");
+      out.style.color = "green";
+      out.innerText = "Valid number:" + number;
+      } catch (error) {
+      out.style.color = "red";
+      out.innerText = "Error: "+ error.message;
+      } finally {
+      console.log("Validation attempted");
+      }
+      }
+      </script>
+    </body>
+</html> 
+
+      
