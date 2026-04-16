@@ -40,3 +40,20 @@ console.log(Number(false));
 console.log(Boolean("0"));
 console.log(Boolean(0));
 console.log(isNaN("abc"));
+function:--------------------------------------
+function greet(){
+  console.log("Hello Guild Leader Fidrik!");
+  console.log("Hello Vice Guild Leader Mylok!");
+  console.log("Hello Division 1 head Spike!");
+}
+greet();
+
+
+
+
+
+
+
+
+
+continue in https://aman-0402.github.io/JAVASCRIPT/                    :---------------------------------------
