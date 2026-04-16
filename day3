@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Button with name</title>
+  </head>
+  <body>
+    <button onclick="myFunction()">Click Me</button>
+    <p id="demo"></p>
+    
+    <script>
+      function myFunction(){
+        const name = "Mylok";
+        let age=19;
+        document.getElementById("demo").innerHTML =
+         "<br>Hello " + name + "!"+'<br>'+
+         "<br>Age =  " + age  +'<br>' ;
+
+      }
+    </script>
+  </body>
+</html>
+      let obj1 = {"value":10};
+let obj2 = obj1;
+console.log(obj1);
+console.log(obj2);
+                                      ///ans:----- 10,10,20,20
+obj2.value = 20;
+console.log(obj1);
+console.log(obj2);
+
+let name = "Mylok";
+console.log(typeof name);   /// ans:--- string
+
