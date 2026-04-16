@@ -31,3 +31,12 @@ console.log(obj2);
 let name = "Mylok";
 console.log(typeof name);   /// ans:--- string
 
+-------------------------------------------------------------------------------------------------------------------
+type conversion:------------------------------
+console.log(Number("abc"));
+console.log(Number(""));
+console.log(Number(true));
+console.log(Number(false));
+console.log(Boolean("0"));
+console.log(Boolean(0));
+console.log(isNaN("abc"));
