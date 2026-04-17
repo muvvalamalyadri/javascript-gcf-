@@ -89,9 +89,14 @@ document.getElementById("output").innerHTML =
 </body>
 </html>
 
+Global scope:----------------------------
 
-
-
+let name = "Mylok";
+function showName() {
+console.log(name);
+}
+showName();
+console.log(name);
 
 
 
