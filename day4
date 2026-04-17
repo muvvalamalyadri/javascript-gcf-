@@ -269,6 +269,14 @@ Live in Browser — Composed Price Calculator:---------------
         "<b>After 18% GST:</b> " + formatPrice(withTax);
     }
   </script>
-
 </body>
 </html>
+
+Logical & Comparison Operators:---------------------------------------------------
+
+Task 2 — Login validator:---------------
+let username = "admin";
+let password = "1234";
+console.log("admin"===username && "1234"===password);        // True
+let isLoggedIn = (username==="admin" && password==="1234");  //True
+console.log(isLoggedIn);
