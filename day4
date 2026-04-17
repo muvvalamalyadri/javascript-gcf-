@@ -173,3 +173,102 @@ Live in Browser — Student Info Card:-------
 
 </body>
 </html>
+
+
+Math Functions:---------------------------------------------------
+Live in Browser — Dice Roller:-------------
+<!DOCTYPE html>
+<html>
+<head><title>Dice Roller</title></head>
+<body style="font-family:sans-serif;padding:24px;background:#f8f9fa;text-align:center">
+
+  <h2>Dice Roller</h2>
+  <div id="dice"
+    style="font-size:5rem;margin:16px 0;min-height:80px;line-height:1">
+    🎲
+  </div>
+  <p id="label" style="color:#555;font-size:1rem;margin-bottom:16px">
+    Press Roll to start
+  </p>
+  <button onclick="rollDice()"
+    style="padding:10px 28px;background:#f7df1e;border:none;border-radius:6px;
+           cursor:pointer;font-weight:700;font-size:1rem">
+    Roll
+  </button>
+  <div id="history"
+    style="margin-top:20px;font-size:0.9rem;color:#555;line-height:1.8">
+  </div>
+
+  <script>
+    const faces = ["⚀","⚁","⚂","⚃","⚄","⚅"];
+    let rolls = [];
+
+    function rollDice() {
+      let result = Math.floor(Math.random() * 6) + 1; // 1–6
+      rolls.push(result);
+
+      document.getElementById("dice").textContent  = faces[result - 1];
+      document.getElementById("label").textContent =
+        `Rolled: ${result}  |  Max so far: ${Math.max(...rolls)}  |  Min: ${Math.min(...rolls)}`;
+      document.getElementById("history").textContent =
+        "History: " + rolls.join(", ");
+    }
+  </script>
+
+</body>
+</html>
+
+Advanced Functions:--------------------------------------------------
+Live in Browser — Composed Price Calculator:---------------
+<!DOCTYPE html>
+<html>
+<head><title>Advanced Functions</title></head>
+<body style="font-family:sans-serif;padding:24px;background:#f8f9fa">
+
+  <h2>Discount Calculator</h2>
+  <input id="priceInput" type="number" placeholder="Enter price (₹)"
+    style="padding:8px 12px;border:1px solid #ccc;border-radius:6px;
+           font-size:1rem;width:200px">
+  <button onclick="calculate()"
+    style="margin-left:8px;padding:8px 18px;background:#f7df1e;border:none;
+           border-radius:6px;cursor:pointer;font-weight:700;font-size:1rem">
+    Apply 10% Discount
+  </button>
+  <div id="output" style="margin-top:16px;line-height:2.4;font-size:0.95rem"></div>
+
+  <script>
+    // Each function does ONE thing
+    function applyDiscount(price) {
+      return price * 0.9; // 10% off
+    }
+
+    function calculateTax(price) {
+      return price * 1.18; // 18% GST
+    }
+
+    function formatPrice(amount) {
+      return "₹" + amount.toFixed(2);
+    }
+
+    function calculate() {
+      let raw = Number(document.getElementById("priceInput").value);
+
+      if (!raw || raw <= 0) {
+        document.getElementById("output").innerHTML =
+          "<b style='color:red'>Please enter a valid price.</b>";
+        return;
+      }
+
+      // Compose: discount first, then tax on discounted price
+      let discounted = applyDiscount(raw);
+      let withTax    = calculateTax(discounted);
+
+      document.getElementById("output").innerHTML =
+        "<b>Original price:</b> " + formatPrice(raw) + "<br>" +
+        "<b>After 10% discount:</b> " + formatPrice(discounted) + "<br>" +
+        "<b>After 18% GST:</b> " + formatPrice(withTax);
+    }
+  </script>
+
+</body>
+</html>
