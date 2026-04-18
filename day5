@@ -126,3 +126,76 @@ let message2 = age >= 18 ? "Adult" : "Minor";
 
 console.log(message1); // Adult
 console.log(message2); // Adult — same result, one line
+
+LOOP:---------------------------------------
+For loop:---------------
+// Structure: for (initialise; condition; update)
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+
+// Count down
+for (let i = 5; i >= 1; i--) {
+  console.log(i);
+}
+While loop:------------------
+let i = 1;
+
+while (i <= 3) {
+  console.log("Round " + i);
+  i++; // must update — otherwise infinite loop!
+}
+
+// while: condition checked BEFORE each run
+// if false from the start, the body never runs
+let count = 10;
+while (count < 5) {
+  console.log("This never prints");
+  count++;
+}
+console.log("Loop skipped — condition was false from start");
+
+do While:----------------------
+let i = 1;
+
+do {
+  console.log("Run " + i);
+  i++;
+} while (i <= 3);
+
+// Key difference: runs at least ONCE even if condition is false
+let x = 100;
+do {
+  console.log("Runs once even though x > 5");
+  x++;
+} while (x < 5);
+
+
+ break & continue:----------------------
+// continue — skip current iteration, keep going
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) continue; // skip 3
+  console.log(i);
+}
+// Output: 1, 2, 4, 5
+
+// break — exit the loop entirely
+for (let i = 1; i <= 10; i++) {
+  if (i === 4) break; // stop at 4
+  console.log(i);
+}
+// Output: 1, 2, 3
+Looping Over an Array:-------------------
+let fruits = ["Apple", "Banana", "Mango", "Grapes"];
+
+// Classic for loop with index
+for (let i = 0; i < fruits.length; i++) {
+  console.log(i + ": " + fruits[i]);
+}
+
+// Modern for...of — cleaner when index not needed
+for (let fruit of fruits) {
+  console.log(fruit.toUpperCase());
+}
+
+
