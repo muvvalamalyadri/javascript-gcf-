@@ -72,4 +72,64 @@ Form Data Handling:-------------------------------------------------------------
   console.log(email);
   }
 </script>
-    
+--------------------------------------------------------------------------------------------------------------------
+Input Validation:-----------------------------------------------
+Live in Browser — Registration Form with Validation:-------------------------- 
+<!DOCTYPE html>
+<html>
+<head><title>Input Validation</title></head>
+<body style="font-family:sans-serif;padding:24px;background:#f8f9fa">
+
+  <h2>Register</h2>
+
+  <div style="display:flex;flex-direction:column;gap:10px;max-width:320px">
+
+    <input id="regName" type="text" placeholder="Full name"
+      style="padding:8px 12px;border:1px solid #ccc;border-radius:6px;font-size:1rem">
+
+    <input id="regAge" type="text" placeholder="Age"
+      style="padding:8px 12px;border:1px solid #ccc;border-radius:6px;font-size:1rem">
+
+    <input id="regPass" type="password" placeholder="Password (min 6 chars)"
+      style="padding:8px 12px;border:1px solid #ccc;border-radius:6px;font-size:1rem">
+
+    <button onclick="register()"
+      style="padding:9px;background:#f7df1e;border:none;border-radius:6px;
+             cursor:pointer;font-weight:700;font-size:1rem">
+      Submit
+    </button>
+  </div>
+
+  <div id="errors"
+    style="margin-top:14px;font-size:0.9rem;line-height:2;color:red">
+  </div>
+  <p id="success" style="color:green;margin-top:8px;font-weight:600"></p>
+
+  <script>
+    function register() {
+      let name = document.getElementById("regName").value.trim();
+      let age  = document.getElementById("regAge").value.trim();
+      let pass = document.getElementById("regPass").value;
+      let errs = [];
+
+      if (name === "")          errs.push("Name is required.");
+      if (age  === "")          errs.push("Age is required.");
+      else if (isNaN(Number(age))) errs.push("Age must be a number.");
+      else if (Number(age) < 1 || Number(age) > 120) errs.push("Age must be 1–120.");
+      if (pass.length < 6)     errs.push("Password must be at least 6 characters.");
+
+      let errBox = document.getElementById("errors");
+      let ok     = document.getElementById("success");
+
+      if (errs.length > 0) {
+        errBox.innerHTML = errs.map(e => "❌ " + e).join("<br>");
+        ok.textContent   = "";
+      } else {
+        errBox.innerHTML = "";
+        ok.textContent   = "✓ Registered successfully, " + name + "!";
+      }
+    }
+  </script>
+
+</body>
+</html>
